@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 
 def fetch_poster(movie_id):
-    response=requests.get('https://api.themoviedb.org/3/movie/{}?api_key=1bcc251f568581407baafc570c089382&language=en-US'.format(movie_id))
+    response=requests.get('https://api.themoviedb.org/3/movie/{}?api_key=apikey=en-US'.format(movie_id))
     data=response.json()
     if data.get("poster_path"):
         return "https://image.tmdb.org/t/p/w500" + data["poster_path"]
@@ -53,3 +53,4 @@ if st.button('Recommend'):
     with col5:
         st.text(names[4])
         st.image(posters[4])
+
